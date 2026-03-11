@@ -72,4 +72,116 @@ Several features were engineered to improve predictive performance, including:
 - `salary_window`
 - `salary_cycle`
 - `payday_call`
+  
+### Campaign history features
+- `previous_contact`
+- `contact_recency`
+- `previous_success`
+- `total_contacts`
+  
+### Financial behaviour features
+- `financial_pressure`
+- `balance_shifted`
+- `log_balance`
+- `balance_segment`
+- `liquidity_pressure`
+- `high_balance`
+- `negative_balance`
+- `balance_per_contact`
+  
+### Customer profiling features
+- `age_group`
+- `financial_maturity`
+- `job_stability`
+- `job_stability_score`
+- `education_level`
+- `family_commitment`
+- `life_stage_maturity`
+- `life_stage`
+- `stability_score`
+  
+### Credit features
+- `credit_risk`
+- `credit_stress`
+
+---
+
+## Models Used
+The following models were trained and compared:
+
+1. **Logistic Regression**
+   - baseline and interpretable model
+   - class weighted to handle imbalance
+
+2. **Random Forest**
+   - non-linear ensemble model
+   - class weighted
+
+3. **XGBoost**
+   - boosting-based model for tabular data
+   - imbalance handled using `scale_pos_weight`
+
+---
+## Model Validation and Strategy
+Because the dataset is imbalanced, the project used:
+
+- **Stratified train/test split**
+- **Stratified 5-fold cross-validation**
+- **ROC-AUC** as the main comparison metric
+
+This ensures class proportions are preserved during training and evaluation.
+
+---
+## Evaluation Metrics
+The following metrics were used:
+
+- Accuracy
+- Precision
+- Recall
+- F1-score
+- ROC-AUC
+
+In addition, the project used:
+- **Feature importance**
+- **Logistic regression coefficients**
+- **Decile analysis**
+- **Uptake improvement analysis**
+- **Population Stability Index (PSI)** for drift monitoring
+
+---
+
+## Key Business Insight
+The baseline campaign uptake rate was approximately **11.55%** under random targeting.
+
+Using the model to target the top-ranked customers increased uptake significantly:
+- **Top 10% targeted customers:** ~47.78%
+- **Top 20% targeted customers:** ~32.04%
+- **Top 30% targeted customers:** ~25.37%
+
+This shows that the model can substantially improve campaign efficiency by prioritizing customers most likely to respond.
+
+---
+
+## Dashboard Features
+Two Streamlit dashboards were built to provide:
+### Exploratoy Data Analysis
+- number of customers 
+- current uptake rate
+- average customer balance
+- previous contacted customer rate
+- data quality statistics
+- correlation heatmap
+- feature distributions plots
+- feature outlier box plots 
+
+### Model Results and Drift Monitoring
+- final features used
+- correlation with target
+- model performance comparison
+- ROC curve comparison
+- feature importance
+- logistic regression drivers
+- decile analysis
+- uptake rate before vs after model targeting
+- model drift monitoring using PSI
 
