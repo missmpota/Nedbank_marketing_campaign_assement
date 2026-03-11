@@ -19,19 +19,19 @@ For this problem, a batch-first deployment is the strongest recommendation unles
 
 ## Performance Monitoring
 Once deployed, model monitoring is necessary because customer behavior, product uptake patterns, and campaign strategies can change over time.
-*   **Metrics:** Track key performance indicators (KPIs) like **AUC-ROC for ranking quality, Precision, Recall, and F1-Score** in real-time.
-*   **Feedback Loops:** Compare model predictions against actual outcomes as they become available to calculate "ground truth" accuracy.
+- **Metrics:** Track key performance indicators (KPIs) like **AUC-ROC for ranking quality, Precision, Recall, and F1-Score** in real-time.
+- **Feedback Loops:** Compare model predictions against actual outcomes as they become available to calculate "ground truth" accuracy.
 
 ### Drift Detection
-*   **Data Drift:** Use statistical tests (e.g., **Kolmogorov-Smirnov test**) to detect shifts in the distribution of input features compared to the training set.
-*   **Concept Drift:** Monitor if the relationship between features and the target variable changes over time (e.g., consumer behavior changing during an economic downturn).
-*   **Tooling:** streamlit model montoring dashboard to send autommated email to data science once there is a change in drift shift is detect from change in features or model performance going below certian threshold e.g accuracy on 75%
+- **Data Drift:** Use statistical tests (e.g., **Kolmogorov-Smirnov test**) to detect shifts in the distribution of input features compared to the training set.
+- **Concept Drift:** Monitor if the relationship between features and the target variable changes over time (e.g., consumer behavior changing during an economic downturn).
+- **Tooling:** streamlit model montoring dashboard to send autommated email to data science once there is a change in drift shift is detect from change in features or model performance going below certian threshold e.g accuracy on 75%
 
 ---
 # Ethical Considerations 
 Even when a model improves campaign efficiency, it can create fairness concerns if some customer groups are consistently excluded.
 
-*   **Algorithmic Bias:** If the training data contains historical biases, the model may systematically exclude specific protected groups (e.g., based on race, gender, or age).
-*   **Fairness Metrics:** Regularly audit the model using metrics  to ensure fair treatment across all client segments.
-*   **Human and machine interaction** Ensure that campaign teams and model risk stakeholders review model outcomes rather than relying blindly on the model.
-*   **Inclusion:** If certain groups are consistently excluded, we must investigate if the model is penalizing them for specific reasin such as  lack of data and consider alternative data sources to promote financial inclusion
+- **Algorithmic Bias:** If the training data contains historical biases, the model may systematically exclude specific protected groups (e.g., based on race, gender, or age).
+- **Fairness Metrics:** Regularly audit the model using metrics  to ensure fair treatment across all client segments.
+- **Human and machine interaction** Ensure that campaign teams and model risk stakeholders review model outcomes rather than relying blindly on the model.
+- **Inclusion:** If certain groups are consistently excluded, we must investigate if the model is penalizing them for specific reasin such as  lack of data and consider alternative data sources to promote financial inclusion
