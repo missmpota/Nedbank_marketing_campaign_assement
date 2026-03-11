@@ -163,7 +163,7 @@ This shows that the model can substantially improve campaign efficiency by prior
 ---
 
 ## Dashboard Features
-Two Streamlit dashboards were built to provide:
+Two Streamlit dashboards were built. To run streamlit dashboard, open termina and open directoty where files are save, run "streamlit run app.py" 
 ### Exploratoy Data Analysis
 - number of customers 
 - current uptake rate
